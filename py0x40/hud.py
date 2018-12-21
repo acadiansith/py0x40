@@ -10,7 +10,7 @@ from ffmpeg import get_duration
 import librosa
 
 freetype.init()
-font = freetype.Font(os.path.join('fonts', 'PetMe128.ttf'), size=10)
+font = freetype.Font(os.path.join(os.path.dirname(__file__), 'fonts', 'PetMe128.ttf'), size=10)
 _, _, _, MAX_HEIGHT_10 = font.get_rect('xo-+¤|:*XO)(~=iIsSvV#@', size=10)
 
 BOX_BORDER_COLOR = (0x33, 0x33, 0x33)
@@ -115,7 +115,9 @@ class InfoBox(object):
 
         self.scale = self.width, self.height = scale
     
-    def draw(self, surface, dest, j_raw=0, t=0)
+    def draw(self, surface, dest, j_raw=0, t=0):
+
+        pass
 
 
 class SpectrumVisualizer(object):

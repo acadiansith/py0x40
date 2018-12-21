@@ -4,8 +4,6 @@ import sys
 
 import numpy as np
 
-from PIL import Image, ImageDraw, ImageFilter, ImageOps
-
 import pygame
 from pygame import display, image, transform, draw, Surface, surfarray
 
@@ -212,6 +210,6 @@ if __name__ == '__main__':
 
     hues = Hues0x40()
 
-    hues.play(35)
+    hues.play(5)
 
     hues.close()
