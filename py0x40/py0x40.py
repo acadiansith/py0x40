@@ -1,6 +1,9 @@
 from itertools import chain, count, islice
+import os
 import time
 import sys
+
+os.environ['SDL_VIDEODRIVER'] = 'dummy'
 
 import numpy as np
 
@@ -12,7 +15,7 @@ from ffmpeg import FFmpegWriter, get_duration
 from hud import BeatBar, SpectrumVisualizer
 from respack import Resources
 
-display.set_mode((1, 1), pygame.NOFRAME)
+display.set_mode((1, 1), pygame.NOFRAME, 32)
 
 class Hues0x40(object):
 
@@ -208,8 +211,12 @@ class Hues0x40(object):
 
 if __name__ == '__main__':
 
+    seconds = 10
+    start_t = time.time()
+
     hues = Hues0x40()
-
-    hues.play(5)
-
+    hues.play(seconds)
     hues.close()
+
+    print((time.time() - start_t) / seconds)
+    
