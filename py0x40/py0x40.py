@@ -212,11 +212,11 @@ class Hues0x40(object):
 if __name__ == '__main__':
 
     seconds = 10
-    start_t = time.time()
 
     hues = Hues0x40()
+
+    start_t = time.time()
     hues.play(seconds)
     hues.close()
-
     print((time.time() - start_t) / seconds)
     

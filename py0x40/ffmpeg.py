@@ -4,7 +4,10 @@ import sys
 
 from pygame import image, surfarray
 
-from plumbum.cmd import ffmpeg
+try:
+    from plumbum.cmd import ffmpeg
+except ImportError:
+    raise ImportError('Cannot connect to ffmpeg. Are plumbum and ffmpeg installed?')
 
 class FFmpegWriter(object):
 
